@@ -98,25 +98,46 @@
     const resultsDiv  = document.getElementById("results");
 
     const locations = [
-      // Kovalam Beach
+      // Beach 1
       {
         name: "Kovalam Beach",
         image: "https://static.toiimg.com/thumb/107013427/Sunset-at-Kovalam-Beach.jpg?width=1200&height=900",
         category: "beach"
       },
 
-      // Brihadeeswarar Temple
+      // Beach 2
+      {
+        name: "Kappad Beach",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        category: "beach"
+      },
+
+      // Temple 1
       {
         name: "Brihadeeswarar Temple",
         image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Madurai_Meenakshi_temple_shikhara.jpg",
         category: "temple"
       },
 
-      // Meenakshi Temple
+      // Temple 2
       {
         name: "Meenakshi Temple",
         image: "https://upload.wikimedia.org/wikipedia/commons/6/65/India_Meenakshi_Temple.jpg",
         category: "temple"
+      },
+
+      // Country 1
+      {
+        name: "France",
+        image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        category: "country"
+      },
+
+      // Country 2
+      {
+        name: "Japan",
+        image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        category: "country"
       }
     ];
 
@@ -124,7 +145,7 @@
       const query = searchInput.value.trim().toLowerCase();
 
       if (!query) {
-        resultsDiv.innerHTML = "<p>Please type 'beach' or 'temple'.</p>";
+        resultsDiv.innerHTML = "<p>Please type 'beach', 'temple', or 'country'.</p>";
         return;
       }
 
@@ -143,13 +164,13 @@
           `)
           .join("");
       } else {
-        resultsDiv.innerHTML = "<p>No results found. Try 'beach' or 'temple'.</p>";
+        resultsDiv.innerHTML = "<p>No results found. Try 'beach', 'temple', or 'country'.</p>";
       }
     });
 
     clearBtn.addEventListener("click", () => {
       searchInput.value = "";
-      resultsDiv.innerHTML = "<p>Type 'beach' or 'temple' and click Search.</p>";
+      resultsDiv.innerHTML = "<p>Type 'beach', 'temple', or 'country' and click Search.</p>";
     });
   </script>
 
