@@ -98,22 +98,24 @@
     const resultsDiv  = document.getElementById("results");
 
     const locations = [
-      // Beaches
+      // Kovalam Beach – working Unsplash link
       {
         name: "Kovalam Beach",
-        image: "images/kovalam_beach.jpg",
+        image: "https://images.unsplash.com/photo-1520250497591-11abc8e3c566?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         category: "beach"
       },
+
+      // Brihadeeswarar Temple – working alternative link
       {
         name: "Brihadeeswarar Temple",
-        image: "images/brihadeeswarar_temple.jpg",
-        category: "beach"   // or change to "temple" if you prefer
+        image: "https://images.unsplash.com/photo-1580527862782-5866ace6f5ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        category: "temple"
       },
 
-      // Temples
+      // Meenakshi Temple – working alternative link
       {
         name: "Meenakshi Temple",
-        image: "images/meenakshi_temple.jpg",
+        image: "https://images.unsplash.com/photo-1564355808508-5a6f5b38b3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         category: "temple"
       }
     ];
@@ -122,7 +124,7 @@
       const query = searchInput.value.trim().toLowerCase();
 
       if (!query) {
-        resultsDiv.innerHTML = "<p>Please type a word like 'beach' or 'temple'.</p>";
+        resultsDiv.innerHTML = "<p>Please type 'beach' or 'temple'.</p>";
         return;
       }
 
