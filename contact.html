@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Contact Us - Travel Recommendation</title>
 </head>
 <body>
+
   <h1>Travel Recommendation Web Application</h1>
+  
   <nav>
     <a href="index.html">Home</a> |
     <a href="about.html">About Us</a> |
@@ -16,17 +19,19 @@
     If you have any questions or suggestions, please contact us using the form below.
   </p>
 
+  <!-- Basic contact form (even if it doesn't send email yet) -->
   <form action="#" method="POST">
     <label>Name:</label><br>
-    <input type="text" name="name" placeholder="Your name"><br><br>
+    <input type="text" name="name" placeholder="Your name" required><br><br>
 
     <label>Email:</label><br>
-    <input type="email" name="email" placeholder="Your email"><br><br>
+    <input type="email" name="email" placeholder="Your email" required><br><br>
 
     <label>Message:</label><br>
-    <textarea name="message" rows="4" cols="40" placeholder="Your message"></textarea><br><br>
+    <textarea name="message" rows="4" cols="40" placeholder="Your message" required></textarea><br><br>
 
     <button type="submit">Submit</button>
   </form>
+
 </body>
 </html>
