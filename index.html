@@ -54,10 +54,12 @@
     }
     .destination {
       margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
     }
     .destination img {
-      width: 100px;
-      height: 60px;
+      width: 120px;
+      height: 80px;
       object-fit: cover;
       border-radius: 4px;
       border: 1px solid #ddd;
@@ -66,7 +68,7 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navigation bar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -89,7 +91,6 @@
     <p>Type 'beach', 'temple', or 'country' and click Search.</p>
   </div>
 
-  <!-- Script with data and search -->
   <script>
     const searchInput = document.getElementById("search");
     const searchBtn   = document.getElementById("search-btn");
@@ -97,26 +98,26 @@
     const resultsDiv  = document.getElementById("results");
 
     const locations = [
-      // Beaches (Kozhikode–style)
+      // Beaches
       {
-        name: "Kozhikode Beach",
+        name: "Kovalam Beach",
         image: "https://images.unsplash.com/photo-1520250497591-11abc8e3c566?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         category: "beach"
       },
       {
-        name: "Kappad Beach",
+        name: "Marina Beach",
         image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         category: "beach"
       },
 
-      // Temples (Kozhikode–style)
+      // Temples
       {
-        name: "Tali Shiva Temple",
+        name: "Brihadeeswarar Temple",
         image: "https://images.unsplash.com/photo-1580527862782-5866ace6f5ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         category: "temple"
       },
       {
-        name: "Sreekanteswara Temple",
+        name: "Meenakshi Temple",
         image: "https://images.unsplash.com/photo-1564355808508-5a6f5b38b3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         category: "temple"
       },
@@ -137,7 +138,6 @@
     searchBtn.addEventListener("click", () => {
       const query = searchInput.value.trim().toLowerCase();
 
-      // Case where nothing is typed
       if (!query) {
         resultsDiv.innerHTML = "<p>Please type a word like 'beach', 'temple', or 'country'.</p>";
         return;
