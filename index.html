@@ -98,40 +98,23 @@
     const resultsDiv  = document.getElementById("results");
 
     const locations = [
-      // Beaches (Kozhikode style)
+      // Beaches
       {
         name: "Kovalam Beach",
-        image: "https://images.unsplash.com/photo-1520250497591-11abc8e3c566?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        image: "images/kovalam_beach.jpg",
         category: "beach"
       },
       {
-        name: "Kappad Beach",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        category: "beach"
+        name: "Brihadeeswarar Temple",
+        image: "images/brihadeeswarar_temple.jpg",
+        category: "beach"   // or change to "temple" if you prefer
       },
 
-      // Temples (Kozhikode style)
+      // Temples
       {
-        name: "Tali Shiva Temple",
-        image: "https://images.unsplash.com/photo-1580527862782-5866ace6f5ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        name: "Meenakshi Temple",
+        image: "images/meenakshi_temple.jpg",
         category: "temple"
-      },
-      {
-        name: "Sreekanteswara Temple",
-        image: "https://images.unsplash.com/photo-1564355808508-5a6f5b38b3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        category: "temple"
-      },
-
-      // Countries
-      {
-        name: "France",
-        image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        category: "country"
-      },
-      {
-        name: "Japan",
-        image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        category: "country"
       }
     ];
 
@@ -139,7 +122,7 @@
       const query = searchInput.value.trim().toLowerCase();
 
       if (!query) {
-        resultsDiv.innerHTML = "<p>Please type a word like 'beach', 'temple', or 'country'.</p>";
+        resultsDiv.innerHTML = "<p>Please type a word like 'beach' or 'temple'.</p>";
         return;
       }
 
@@ -158,13 +141,13 @@
           `)
           .join("");
       } else {
-        resultsDiv.innerHTML = "<p>No results found. Try 'beach', 'temple', or 'country'.</p>";
+        resultsDiv.innerHTML = "<p>No results found. Try 'beach' or 'temple'.</p>";
       }
     });
 
     clearBtn.addEventListener("click", () => {
       searchInput.value = "";
-      resultsDiv.innerHTML = "<p>Type 'beach', 'temple', or 'country' and click Search.</p>";
+      resultsDiv.innerHTML = "<p>Type 'beach' or 'temple' and click Search.</p>";
     });
   </script>
 
