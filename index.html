@@ -2,13 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Travel Recommendation App</title>
   <style>
-    nav{margin:20px 0;}
-    nav a{margin-right:15px;text-decoration:none;color:#007acc;}
+    nav {
+      background: #007acc;
+      padding: 12px;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    .search-area {
+      margin: 20px 0;
+    }
+    .search-box {
+      padding: 8px;
+      width: 300px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      padding: 8px 14px;
+      margin-left: 8px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn-search {
+      background: #007acc;
+      color: white;
+    }
+    .btn-clear {
+      background: #ccc;
+      color: #333;
+    }
+    .results {
+      margin-top: 20px;
+    }
+    .place {
+      border: 1px solid #ddd;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+    }
+    .place img {
+      max-width: 200px;
+      max-height: 150px;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Navigation bar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -17,5 +66,86 @@
 
   <h1>Travel Recommendation App</h1>
   <p>Welcome to our travel recommendation web app. We help you discover the best beaches, temples, and countries based on your preferences.</p>
+
+  <!-- Search bar and buttons -->
+  <div class="search-area">
+    <input
+      type="text"
+      id="search"
+      class="search-box"
+      placeholder="Search for beaches, temples, countries..."
+    />
+    <button id="search-btn" class="btn btn-search">Search</button>
+    <button id="clear-btn" class="btn btn-clear">Clear</button>
+  </div>
+
+  <!-- Results container -->
+  <div id="results" class="results">
+    <!-- Results will be shown here by JavaScript -->
+  </div>
+
+  <script>
+    // Sample data (add at least 2 beaches)
+    const data = [
+      {
+        name: "Kovalam Beach",
+        image: "https://via.placeholder.com/200x150?text=Kovalam+Beach",
+        type: "beach"
+      },
+      {
+        name: "Mallorca Beach",
+        image: "https://via.placeholder.com/200x150?text=Mallorca+Beach",
+        type: "beach"
+      },
+      {
+        name: "Kedarnath Temple",
+        image: "https://via.placeholder.com/200x150?text=Kedarnath+Temple",
+        type: "temple"
+      },
+      {
+        name: "Paris",
+        image: "https://via.placeholder.com/200x150?text=Paris",
+        type: "country"
+      }
+    ];
+
+    const searchInput = document.getElementById("search");
+    const searchBtn = document.getElementById("search-btn");
+    const clearBtn = document.getElementById("clear-btn");
+    const resultsDiv = document.getElementById("results");
+
+    function displayResults(matches) {
+      resultsDiv.innerHTML = "";
+      if (matches.length === 0) {
+        resultsDiv.innerHTML = "<p>No matches found.</p>";
+        return;
+      }
+      matches.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "place";
+        div.innerHTML = `
+          <h3>${item.name}</h3>
+          <img src="${item.image}" alt="${item.name}" />
+        `;
+        resultsDiv.appendChild(div);
+      });
+    }
+
+    searchBtn.addEventListener("click", () => {
+      const query = searchInput.value.trim().toLowerCase();
+      const filtered = data.filter(
+        item =>
+          item.name.toLowerCase().includes(query) ||
+          item.type.toLowerCase().includes(query)
+      );
+      displayResults(filtered);
+    });
+
+    clearBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      resultsDiv.innerHTML = "";
+    });
+  </script>
+
 </body>
 </html>
